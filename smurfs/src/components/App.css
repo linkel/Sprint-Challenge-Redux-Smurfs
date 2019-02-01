@@ -1,5 +1,5 @@
 .App {
-  max-width: 1000px;
+  max-width: 900px;
   box-sizing: border-box;
   margin: 0 auto;
   background-color: rgb(239, 239, 245);
@@ -16,6 +16,7 @@
   letter-spacing: 3px;
   font-weight: normal;
   cursor: default;
+  box-shadow: 0.2rem 0.2rem 0.4rem #888888;
 }
 
 .App > h2 {
@@ -30,7 +31,7 @@
 
 ul {
   list-style: none;
-  padding: 20px 20px 20px 80px;
+  padding: 20px 20px 40px 80px;
   display: flex;
   flex-direction: column;
   justify-content: right;
@@ -51,4 +52,35 @@ li {
 
 li:hover{
   background-color: rgb(10, 20, 58);
+}
+
+form {
+  transform: translate(50px, -30px);
+  box-shadow: 0.2rem 0.2rem 0.2rem #c7c8ce;
+  background-color: rgb(230, 230, 241);
+  border-radius: 3px;
+  width: 800px;
+  margin: 30px auto;
+  padding: 30px
+}
+
+input {
+  margin: 10px;
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+input[type=submit] {
+  padding:10px 15px; 
+  background:#ccc; 
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px; 
+  transition: 0.1s ease-in-out;
+}
+
+input[type=submit]:hover {
+  background-color: gray;
 }
