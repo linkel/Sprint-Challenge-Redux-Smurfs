@@ -13,20 +13,20 @@ const initialState = {
 
 export default (state = initialState, action) => { 
   switch (action.type) {
-    case FETCHING:
-    case FETCH_SUCCESS:
+    case "FETCHING":
+    case "FETCH_SUCCESS":
 
-    case ADDING:
+    case "ADDING":
 
-    case ADD_SUCCESS:
+    case "ADD_SUCCESS":
 
-    case UPDATING:
-    case UPDATE_SUCCESS:
+    case "UPDATING":
+    case "UPDATE_SUCCESS":
 
-    case DELETING:
-    case DELETE_SUCCESS:
+    case "DELETING":
+    case "DELETE_SUCCESS":
 
-    case FAILURE:
+    case "FAILURE":
     default:
       return state;
   }
