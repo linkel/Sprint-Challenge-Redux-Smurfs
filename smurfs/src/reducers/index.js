@@ -62,6 +62,13 @@ export default (state = initialState, action) => {
         error: '',
       }
     case "FAILURE":
+      return {
+        ...state,
+        error: action.error,
+        fetchingSmurf: false,
+        updatingSmurf: false,
+        deletingSmurf: false,
+      }
     default:
       return state;
   }

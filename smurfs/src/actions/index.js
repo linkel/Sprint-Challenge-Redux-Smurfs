@@ -10,7 +10,7 @@ export const getSmurfs = () => {
       })
       .catch(err => {
           console.log(err);
-          dispatch({ type: "FAILURE" });
+          dispatch({ type: "FAILURE", error: "Fetch failed!" });
       });
   };
 };
@@ -28,7 +28,7 @@ export const addSmurf = (name, age, height) => {
       })
       .catch(err => {
           console.log(err);
-          dispatch({ type: "FAILURE" });
+          dispatch({ type: "FAILURE", error: "Add failed!" });
       });
   }
 }
@@ -47,7 +47,7 @@ export const updateSmurf = (id, name, age, height) => {
       })
       .catch(err => {
           console.log(err);
-          dispatch({ type: "FAILURE" });
+          dispatch({ type: "FAILURE", error: "ID doesn't exist" });
       });
   }
 }
@@ -58,12 +58,11 @@ export const deleteSmurf = (id) => {
       dispatch({ type: "DELETING" });
       promise
       .then(response => {
-          console.log(response.data)
           dispatch({ type: "DELETE_SUCCESS", payload: response.data });
       })
       .catch(err => {
           console.log(err);
-          dispatch({ type: "FAILURE" });
+          dispatch({ type: "FAILURE", error: "ID doesn't exist" });
       });
   }
 }

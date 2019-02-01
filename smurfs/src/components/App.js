@@ -32,7 +32,7 @@ const mapStateToProps = state => {
     addingSmurf: state.addingSmurf,
     updatingSmurf: state.updatingSmurf,
     deletingSmurf: state.deletingSmurf,
-    error: null,
+    error: '',
   };
 };
 
