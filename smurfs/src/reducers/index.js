@@ -25,17 +25,42 @@ export default (state = initialState, action) => {
         fetchingSmurfs: false,
         error: '',
       }
-        
     case "ADDING":
-
+      return {
+        ...state,
+        addingSmurf: true,
+      }
     case "ADD_SUCCESS":
-
+      return {
+        ...state,
+        smurfs: action.payload,
+        addingSmurf: false,
+        error: '',
+      }
     case "UPDATING":
+      return {
+        ...state,
+        updatingSmurf: true,
+      }
     case "UPDATE_SUCCESS":
-
+      return {
+        ...state,
+        smurfs: action.payload,
+        updatingSmurf: false,
+        error: '',
+      }
     case "DELETING":
+      return {
+        ...state,
+        deletingSmurf: true,
+      }
     case "DELETE_SUCCESS":
-
+      return {
+        ...state,
+        smurfs: action.payload,
+        deletingSmurf: false,
+        error: '',
+      }
     case "FAILURE":
     default:
       return state;

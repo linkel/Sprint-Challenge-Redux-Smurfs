@@ -15,16 +15,15 @@ export const getSmurfs = () => {
   };
 };
 
-export const addSmurf = (name, age, email) => {
-  const friendObj = {
-      name, age, email
+export const addSmurf = (name, age, height) => {
+  const smurfObj = {
+      name, age, height
   }
-  const promise = axios.post('http://localhost:3333/smurfs/', friendObj);
+  const promise = axios.post('http://localhost:3333/smurfs/', smurfObj);
   return dispatch => {
       dispatch({ type: "ADDING" });
       promise
       .then(response => {
-          console.log(response.data)
           dispatch({ type: "ADD_SUCCESS", payload: response.data });
       })
       .catch(err => {
@@ -34,11 +33,11 @@ export const addSmurf = (name, age, email) => {
   }
 }
 
-export const updateSmurf = (id, name, age, email) => {
-  const friendObj = {
-      name, age, email
+export const updateSmurf = (id, name, age, height) => {
+  const smurfObj = {
+      name, age, height
   }
-  const promise = axios.put(`http://localhost:3333/smurfs/${id}`, friendObj);
+  const promise = axios.put(`http://localhost:3333/smurfs/${id}`, smurfObj);
   return dispatch => {
       dispatch({ type: "UPDATING" });
       promise
