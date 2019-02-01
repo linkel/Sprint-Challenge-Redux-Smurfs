@@ -8,14 +8,24 @@ const initialState = {
   addingSmurf: false,
   updatingSmurf: false,
   deletingSmurf: false,
-  error: null,
+  error: '',
 }
 
 export default (state = initialState, action) => { 
   switch (action.type) {
     case "FETCHING":
+      return {
+        ...state,
+        fetchingSmurfs: true,
+      }
     case "FETCH_SUCCESS":
-
+      return {
+        ...state,
+        smurfs: action.payload,
+        fetchingSmurfs: false,
+        error: '',
+      }
+        
     case "ADDING":
 
     case "ADD_SUCCESS":
